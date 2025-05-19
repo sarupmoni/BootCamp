@@ -1,4 +1,6 @@
-public class Rectangle {
+import models.caluclateCloseShapes;
+
+public class Rectangle implements caluclateCloseShapes {
     private final int width;
     private final int height;
 
@@ -7,11 +9,13 @@ public class Rectangle {
         this.height = height;
     }
 
+    @Override
     public int area() {
-        return width * height;
+        return this.width * this.height;
     }
 
+    @Override
     public int perimeter() {
-        return 2 * (width + height);
+        return 2 * (this.width + this.height);
     }
 }
