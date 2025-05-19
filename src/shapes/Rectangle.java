@@ -1,3 +1,5 @@
+package shapes;
+
 import models.caluclateCloseShapes;
 
 public class Rectangle implements caluclateCloseShapes {
