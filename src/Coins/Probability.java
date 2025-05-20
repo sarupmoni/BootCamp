@@ -21,7 +21,7 @@ public class Probability {
         return Objects.hashCode(value);
     }
 
-    static Probability createProbability(double value) throws RuntimeException {
+    static Probability create(double value) throws RuntimeException {
         if (value >= 0 && value <= 1 ) {
             return new Probability(value);
         }
@@ -35,7 +35,13 @@ public class Probability {
     }
 
     public Probability and(Probability o) {
-        double that = o.value * value;
-        return  new Probability(that);
+        double probability  = o.value * value;
+        return  new Probability(probability);
+    }
+
+    public Probability or(Probability o) {
+//        double probability = 1 - (o.value * value);
+        double probability = 1 - and(o).value;
+        return  new Probability(probability);
     }
 }
